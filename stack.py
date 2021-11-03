@@ -14,7 +14,11 @@ class Stack:
         return self.data[-1]
     
     def index_of(self, item) -> int:
-        pass
+        """Returns the number of pops until the specified item is at the end of the stack."""
+        for i, entry in enumerate(self.data[::-1]):
+            if entry == item:
+                return i
+        raise ValueError(f"{item} not in stack.")
 
     def is_empty(self) -> bool:
         return not self.data
