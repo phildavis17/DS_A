@@ -1,6 +1,5 @@
 from stack import Stack
 
-
 def test_exists():
     s = Stack()
     assert s is not None
@@ -36,3 +35,13 @@ def test_push_sequence():
     
 def test_push_pop_sequence():
     s = Stack()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    assert s.pop() == 3
+    assert s.pop() == 2
+    assert len(s) == 1
+    s.push(4)
+    assert s.pop() == 4
+    assert s.pop() == 1
+    assert s.is_empty()
