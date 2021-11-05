@@ -3,6 +3,7 @@ import pytest
 from binary_search import bin_search
 
 basic_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+non_index_list = [5, 6, 7, 8, 9, 10]
 empty_list = []
 one_list = [1]
 two_list = [0, 1]
@@ -11,6 +12,7 @@ three_list = [1, 2, 3]
 
 def test_basic_bin_search():
     assert bin_search(basic_list, 4) == 4
+    assert bin_search(non_index_list, 6) == 1
 
 
 def test_bin_search_not_found():

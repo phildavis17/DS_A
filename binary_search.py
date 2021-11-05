@@ -16,19 +16,19 @@ def bin_search(l:Iterable, target: Any) -> int:
     If target is found, returns index of target. If not found return -1.
     """
     low = 0
-    high = len(l) - 1
+    high = len(l)
     found = False
     
-    while not found and high >= low:
-        pivot = low + ((high - low) // 2)
+    while not found and high > low:
+        pivot = (low + high) // 2
         #logging.debug(f"{pivot=}")
         if l[pivot] == target:
             found = True
             break
         elif l[pivot] < target:
             low = pivot + 1
-        elif l[pivot] > target:
-            high = pivot - 1
+        else:
+            high = pivot
     if found:
         return pivot
     else:
