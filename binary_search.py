@@ -34,9 +34,9 @@ def bin_search(l:Sized, target: Any) -> int:
         return -1
 
 
-def bin_search_basic(l: Sized, target: Any) -> int:
+def bin_search_index(l: Sized, target: Any) -> int:
     """
-
+    Returns an index at which the target would be expected, whether or not it is present.
     """
     low = 0
     high = len(l)
@@ -50,7 +50,9 @@ def bin_search_basic(l: Sized, target: Any) -> int:
             low = mid + 1
         else:
             high = mid
-        
+
+def bin_search_left():
+    pass
 
 
 if __name__ == "__main__":
